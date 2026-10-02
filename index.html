@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071126">
+  <meta name="description" content="Um céu inteiro transformado em poema para Ana.">
+  <title>Ana, o céu aprendeu seu nome</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23071126'/%3E%3Cpath d='M32 52S9 38 9 22c0-11 14-15 23-3 9-12 23-8 23 3 0 16-23 30-23 30Z' fill='%23f7cc65'/%3E%3C/svg%3E">
+  <link rel="preload" href="ceu-estrelado.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#poema">Ir para o poema</a>
+
+  <div class="opening" id="opening" aria-label="Abertura do site">
+    <div class="opening__halo" aria-hidden="true"></div>
+    <p class="eyebrow">uma noite feita para nós dois</p>
+    <h1>Tenho um céu<br>para te mostrar, Ana.</h1>
+    <button class="button button--gold" id="openSky" type="button">
+      <span>Abrir nosso céu</span>
+      <span class="button__star" aria-hidden="true">✦</span>
+    </button>
+    <p class="opening__hint">use fones se quiser ouvir as estrelas</p>
+  </div>
+
+  <div class="world" id="world" aria-hidden="true">
+    <div class="sky-picture" id="skyPicture"></div>
+    <div class="sky-vignette"></div>
+    <canvas id="starCanvas" aria-hidden="true"></canvas>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand__mark">G</span>
+        <span>Gustavo <i>&</i> Ana</span>
+      </a>
+      <div class="topbar__actions">
+        <button class="icon-button" id="shootingStar" type="button" aria-label="Criar uma estrela cadente" title="Pedir um desejo">☄</button>
+        <button class="sound-button" id="soundToggle" type="button" aria-pressed="false">
+          <span class="sound-waves" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span id="soundLabel">Ouvir o céu</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero__orbit orbit-one" aria-hidden="true"></div>
+        <div class="hero__orbit orbit-two" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="eyebrow reveal">para a garota que ilumina tudo</p>
+          <h2 id="hero-title" class="reveal">O céu aprendeu<br><em>o seu nome.</em></h2>
+          <p class="hero__intro reveal">Se cada estrela pudesse guardar uma lembrança, ainda faltaria céu para tudo o que quero viver com você.</p>
+          <a class="scroll-invite reveal" href="#poema">
+            <span class="scroll-invite__line" aria-hidden="true"></span>
+            <span>Leia devagar</span>
+          </a>
+        </div>
+
+        <button class="message-star message-star--one" type="button" data-message="Seu sorriso é meu amanhecer favorito." aria-label="Abrir mensagem da estrela 1"><span>✦</span></button>
+        <button class="message-star message-star--two" type="button" data-message="Com você, até o silêncio vira carinho." aria-label="Abrir mensagem da estrela 2"><span>✦</span></button>
+        <button class="message-star message-star--three" type="button" data-message="Eu escolheria você em todas as vidas." aria-label="Abrir mensagem da estrela 3"><span>✦</span></button>
+        <div class="star-message" id="starMessage" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="poem-section" id="poema" aria-labelledby="poem-title">
+        <div class="section-number" aria-hidden="true">01</div>
+        <div class="section-heading">
+          <p class="eyebrow">meu poema para você</p>
+          <h2 id="poem-title">Entre estrelas<br>e <em>nós.</em></h2>
+        </div>
+
+        <article class="poem" aria-label="Poema romântico para Ana">
+          <div class="poem__line" data-line="1">
+            <span class="poem__number">I</span>
+            <p>Antes de você, a noite era só escura,<br>um céu bonito, distante, sem direção.</p>
+          </div>
+          <div class="poem__line poem__line--right" data-line="2">
+            <span class="poem__number">II</span>
+            <p>Então seu sorriso riscou meu caminho<br>e fez constelação dentro do meu coração.</p>
+          </div>
+          <div class="poem__line" data-line="3">
+            <span class="poem__number">III</span>
+            <p>Você chegou como chega a luz na janela:<br>sem pedir licença, mas deixando tudo mais bonito.</p>
+          </div>
+          <div class="poem__line poem__line--right" data-line="4">
+            <span class="poem__number">IV</span>
+            <p>E eu, que achava infinito uma palavra enorme,<br>descobri que infinito é o tempo ao seu lado.</p>
+          </div>
+          <div class="poem__line" data-line="5">
+            <span class="poem__number">V</span>
+            <p>Se a vida for mar, eu quero sua mão na minha.<br>Se for tempestade, eu viro abrigo.</p>
+          </div>
+          <div class="poem__line poem__line--right" data-line="6">
+            <span class="poem__number">VI</span>
+            <p>Se for uma noite inteira sem lua,<br>eu acendo cada estrela só para te ver sorrir.</p>
+          </div>
+          <div class="poem__line poem__line--center" data-line="7">
+            <span class="poem__number">VII</span>
+            <p>Porque amar você é isso:<br><strong>encontrar casa em uma pessoa.</strong></p>
+          </div>
+        </article>
+      </section>
+
+      <section class="constellation-section" id="constelacao" aria-labelledby="constellation-title">
+        <div class="section-number" aria-hidden="true">02</div>
+        <div class="constellation-copy">
+          <p class="eyebrow">um segredo entre as estrelas</p>
+          <h2 id="constellation-title">Ligue os cinco<br><em>pontos de luz.</em></h2>
+          <p>Toque em cada estrela para desenhar a constelação que mais combina com a gente.</p>
+          <div class="constellation-progress" aria-live="polite"><span id="progressText">0 de 5 estrelas</span><i><b id="progressBar"></b></i></div>
+        </div>
+
+        <div class="constellation" id="constellation" aria-label="Constelação interativa">
+          <svg class="constellation__lines" id="constellationLines" viewBox="0 0 520 480" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <button class="constellation__star s1" type="button" aria-label="Estrela 1" data-x="105" data-y="85">✦</button>
+          <button class="constellation__star s2" type="button" aria-label="Estrela 2" data-x="415" data-y="85">✦</button>
+          <button class="constellation__star s3" type="button" aria-label="Estrela 3" data-x="465" data-y="225">✦</button>
+          <button class="constellation__star s4" type="button" aria-label="Estrela 4" data-x="260" data-y="405">✦</button>
+          <button class="constellation__star s5" type="button" aria-label="Estrela 5" data-x="55" data-y="225">✦</button>
+          <div class="constellation__secret" id="constellationSecret">
+            <span aria-hidden="true">♥</span>
+            <p>Meu lugar favorito<br>sempre será ao seu lado.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="time-section" aria-labelledby="time-title">
+        <div class="section-number" aria-hidden="true">03</div>
+        <div class="time-card">
+          <p class="eyebrow">desde 12 de setembro de 2026, às 16:43</p>
+          <h2 id="time-title">Nosso amor já ilumina o mundo há</h2>
+          <div class="counter" id="loveCounter" aria-live="off">
+            <div><strong id="days">0</strong><span>dias</span></div>
+            <div><strong id="hours">00</strong><span>horas</span></div>
+            <div><strong id="minutes">00</strong><span>minutos</span></div>
+            <div><strong id="seconds">00</strong><span>segundos</span></div>
+          </div>
+          <button class="wish-button" id="makeWish" type="button"><span>✦</span> Acender uma estrela por nós</button>
+          <p class="wish-count" id="wishCount">Nenhuma estrela acesa neste aparelho ainda.</p>
+        </div>
+      </section>
+
+      <section class="finale" id="final" aria-labelledby="final-title">
+        <p class="eyebrow">e se todas as estrelas se apagassem...</p>
+        <h2 id="final-title">Eu ainda encontraria<br>meu caminho <em>em você.</em></h2>
+        <p class="signature">Com todo o meu amor, <strong>Gustavo</strong></p>
+        <button class="button button--outline" id="openLetter" type="button">Abrir a última estrela <span aria-hidden="true">✦</span></button>
+      </section>
+    </main>
+
+    <footer>
+      <p>Nosso amor não cabe no céu.</p>
+      <span>12.09.2026</span>
+    </footer>
+  </div>
+
+  <dialog class="letter" id="letterDialog" aria-labelledby="letter-title">
+    <button class="letter__close" id="closeLetter" type="button" aria-label="Fechar carta">×</button>
+    <div class="letter__moon" aria-hidden="true">☾</div>
+    <p class="eyebrow">minha última estrela</p>
+    <h2 id="letter-title">Para você, Ana.</h2>
+    <p>Talvez eu nunca consiga colocar em palavras tudo o que sinto. Mas quero que você saiba que, entre tantos caminhos, encontros e possibilidades, ter encontrado você foi a coisa mais bonita que a vida escreveu para mim.</p>
+    <p>Quero continuar descobrindo o mundo ao seu lado, colecionando risadas, abraços demorados, planos malucos e noites em que o tempo parece parar. Você é meu presente favorito e o futuro que eu quero construir.</p>
+    <p class="letter__ending">Eu te amo em todos os céus.<br><strong>— Gustavo</strong></p>
+  </dialog>
+
+  <div class="shooting-star" id="shootingStarEl" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
